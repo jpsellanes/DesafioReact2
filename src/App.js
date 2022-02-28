@@ -7,11 +7,11 @@ import Main from "./components/Main";
 
 function App(){
   return(
-    <>
+      <>
         <NavBar/>
         <Main/>
         <Footer/>
-    </>
+      </>
   )
 }
 
