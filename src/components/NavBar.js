@@ -1,10 +1,11 @@
 import { Container, Navbar, Nav, NavDropdown} from "react-bootstrap";
+import CartWidget from "./CartWidget";
 
 
 const NavBar =() => {
     return (
         <>
-            <Navbar fixed="top" bg="primary" variant="dark" expand="lg">
+            <Navbar  bg="primary" variant="dark" expand="lg">
                 <Container>
                     <Navbar.Brand href="#home">JPSCAD</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -16,6 +17,7 @@ const NavBar =() => {
                         <Nav.Link href="#link">About Us</Nav.Link>
                     </Nav>
                     </Navbar.Collapse>
+                    <CartWidget/>
                 </Container>
                 </Navbar>
                         
