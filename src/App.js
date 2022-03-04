@@ -11,7 +11,6 @@ function App(){
         <NavBar/>
         <div></div>
         <ItemListContainer model ="B-Type" compqty={250}/>
-        <ItemListContainer model ="C-Type" compqty={120}/>
         <Main/>
         <Footer/>
       </>
