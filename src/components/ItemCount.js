@@ -19,7 +19,7 @@ function ItemCount(props){
     }
 
     const onAdd = ()=>{
-        console.log(count)
+        console.log(count )
     }
 
     return(

@@ -9,9 +9,8 @@ function App(){
   return(
       <>
         <NavBar/>
-        <div></div>
-        <ItemListContainer model ="B-Type" compqty={250}/>
         <Main/>
+        <ItemListContainer/>
         <Footer/>
       </>
   )
