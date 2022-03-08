@@ -37,17 +37,28 @@ let productosIniciales = [
 
 const ItemList = (props) =>{
 
+    const[error, setError] = useState(false)
     const[loading, setLoading] = useState(true);
     const[productos,setProductos] = useState([]);
 
     useEffect(()=>{
-        console.log("Hola Mundo");
-        setTimeout(()=>{
-            setProductos(productosIniciales);
-            setLoading(false);
-        }, 2000)
+        const PromesaTest = new Promise((res,rej) =>{
+            setTimeout(() =>{
+                res(productosIniciales);
+            }, 2000)
+        })
 
-})
+        PromesaTest
+            .then((res)=>{
+                setProductos(productosIniciales);
+            })
+            .catch((rej)=>{
+                setError(true);
+            })
+            .finally(()=>{
+                setLoading(false)
+            })
+    })
     
         return(
             <div>
