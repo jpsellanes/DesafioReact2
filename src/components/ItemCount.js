@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import "./itemCount.css"
 
 function ItemCount(props){
 
@@ -23,7 +24,7 @@ function ItemCount(props){
     }
 
     return(
-        <div>
+        <div class="itemCounter">
             <p>Add the desired amount of items</p>
             <button onClick={add}>
                 Add
