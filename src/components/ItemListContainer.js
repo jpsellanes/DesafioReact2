@@ -10,7 +10,7 @@ import picP3 from "../assets/items/product3.jpg"
 let productosIniciales = [
     {
         id:1,
-        nombre: "LMH5485-SEP",
+        nombre: "SMV320C6727B-SP",
         precio: 9782.4,
         stock: 10,
         imgurl: picP1

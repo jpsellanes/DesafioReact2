@@ -9,3 +9,8 @@ li {
     text-align: center;
     color: white;
 }
+
+li:hover{
+    transform: scale(1.05);
+    transition:0.5s;
+}

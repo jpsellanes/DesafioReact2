@@ -24,7 +24,7 @@ function ItemCount(props){
     }
 
     return(
-        <div class="itemCounter">
+        <div className="itemCounter">
             <p>Add the desired amount of items</p>
             <button onClick={add}>
                 Add
