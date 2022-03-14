@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import "./itemDetail.css"
+import ItemCount from "./ItemCount";
 
 const ItemDetail =({producto})=>{
     return(
@@ -13,6 +14,7 @@ const ItemDetail =({producto})=>{
             <p>Stock {producto.stock}</p>
             <p>{producto.detail}</p>
             <p>{producto.features}</p>
+            <ItemCount stock ={producto.stock}/>
         </div>
     )
 }

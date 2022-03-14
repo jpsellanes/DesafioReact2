@@ -1,29 +1,74 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
-import picP1 from "../assets/items/product1.png"
+import {toast} from "react-toastify"
 import "./itemDetailContainer.css"
+import {productosIniciales} from "./ItemListContainer"
 
-const producto ={
-    id:1,
-    nombre: "LMH5485-SEP",
-    precio: 9782.4,
-    stock: 10,
-    imgurl: picP1,
-    detail: "The SMV320C6727B is the next generation of Texas Instruments C67x generation of high-performance 32- and 64-bit floating-point digital signal processors.",
-    features: "32- and 64-Bit 250-MHz Floating-Point DSPs \n Radiation Tolerance: 100 kRad TID (Si) \n 256K-Byte Unified Program and Data RAM \n 384K-Byte Unified Program and Data ROM "
+
+
+
+
+const ItemDetailContainer = ()=>{
+
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
+    const {id} = useParams();
+    const [producto, setProducto] = useState({});
+
+    useEffect(()=>{
+        setLoading(true);
+        const promesaTest = new Promise((res, rej)=>{
+            setTimeout(()=>{
+                res(productosIniciales);
+            }, 2000)
+        })
+
+        promesaTest
+            .then((res)=>{
+                var producto = productosIniciales.find(producto => {
+                    return producto.id == id;
+                })
+                setProducto(producto)
+            })
+            .catch((rej)=>{
+                toast.error("Problema al cargar producto");
+                setError(true);
+            })
+            .finally(()=>{
+                setLoading(true)
+            })
+    },[])
+
+    return(
+        <div id="itemDetailContainer">
+            <ItemDetail producto ={producto}/>
+        </div>
+    )
 }
 
+export default ItemDetailContainer
+
+
+
+
+/*
 
 const productPromise = new Promise((resolve, rej)=>{
     setTimeout(()=>{
-        resolve(producto)
+        resolve(productosIniciales)
     }, 2000);
 })
 
+
 const ItemDetailContainer = ()=>{
+
+
+    const {id} = useParams()
     const [producto,setProducto] = useState({})
+
     const getItem = ()=>{
-        return productPromise
+        return productPromise.id === id
     }
 
     useEffect(()=>{
@@ -39,4 +84,4 @@ const ItemDetailContainer = ()=>{
     )
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer*/
