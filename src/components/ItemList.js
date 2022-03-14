@@ -10,7 +10,7 @@ const ItemList = ({productos}) =>{
             <div>
                 <ul className="list-group list-group-horizontal">
                     {productos.map((producto, indice)=>{
-                        return <li> <Item key={indice} producto={producto}/>  <ItemCount stock ={producto.stock}/></li>
+                        return <li key={indice} > <Item producto={producto}/>  <ItemCount stock ={producto.stock}/></li>
                     })}
                 </ul>
             </div>
