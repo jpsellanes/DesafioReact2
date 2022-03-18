@@ -19,8 +19,8 @@ function ItemCount(props){
         }
     }
 
-    const onAdd = ()=>{
-        console.log(count )
+    const addToCart = ()=>{
+        props.onAdd(count)
     }
 
     return(
@@ -32,7 +32,7 @@ function ItemCount(props){
             <button onClick={remove}>
                 Remove
             </button>
-            <button onClick={onAdd} disabled={count === 0}>
+            <button onClick={addToCart} disabled={count === 0}>
                 Add To Chart
             </button>
             <h4>Total Units  {count} </h4>
