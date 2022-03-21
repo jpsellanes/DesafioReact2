@@ -1,18 +1,19 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import "./itemDetail.css"
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
+import { CartContext } from "../context/CartContext";
 
 const ItemDetail =({producto})=>{
 
     const[contador, setContador] = useState(true);
-
+    const {addItem, cart} = useContext(CartContext)
 
     const onAdd =(count)=>{
         if(count != undefined){
-            console.log("Enviado");
-            console.log(count);
             setContador(false);
+            addItem(producto, count)
+            console.log("CART=",cart)
         }
     }
 

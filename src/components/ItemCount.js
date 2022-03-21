@@ -3,6 +3,7 @@ import "./itemCount.css"
 
 function ItemCount(props){
 
+    const onAdd =()=>{}
     const [count, setCount] = useState(1);
     const add =()=>{
         if(count < props.stock){
