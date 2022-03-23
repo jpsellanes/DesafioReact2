@@ -51,10 +51,18 @@ export const CartContextProvider = ({children}) => {
         return cartTotalCount
     }
 
+    const cartTotalUnits =(cart)=>{
+        let cartTotalUnitCount = 0
+        for(let item in cart){
+            cartTotalUnitCount = cartTotalUnitCount + cart[item]["count"];
+        } 
+        console.log(cartTotalUnitCount)
+        return cartTotalUnitCount
+    }
 
 
     return(
-        <CartContext.Provider value={{addItem, removeItem, clear, isInCart, cart, cartTotal}}>
+        <CartContext.Provider value={{addItem, removeItem, clear, isInCart, cart, cartTotal, cartTotalUnits}}>
             {children}
         </CartContext.Provider>
     )

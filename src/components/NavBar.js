@@ -1,9 +1,17 @@
-import { Container, Navbar, Nav, NavDropdown} from "react-bootstrap";
 import CartWidget from "./CartWidget";
 import {Link} from "react-router-dom";
 import "./navBar.css"
+import React from "react";
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
+
+
 
 const NavBar =() => {
+    const {addItem, removeItem, clear, isInCart, cart, cartTotal}= useContext(CartContext)
+
+
+
     return (
         <div id="topnav">
         <nav> 
@@ -12,7 +20,9 @@ const NavBar =() => {
                 <li><Link to="/categoria/Amplifiers"> Amplifiers</Link></li>
                 <li><Link to="/categoria/Microcontrollers"> Microcontrollers</Link></li>
                 <li><Link to="/categoria/Sensors"> Sensors</Link></li>
+                {cart.length === 0 ? null :
                 <li><Link to="/carrito"> <CartWidget/> </Link></li>
+                }
             </ul>
         </nav>
         </div>
@@ -22,6 +32,3 @@ const NavBar =() => {
 
 export default NavBar
 
-/*
-bg="primary" variant="dark" expand="lg" 
- */
