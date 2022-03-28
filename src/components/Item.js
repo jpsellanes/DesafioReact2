@@ -5,6 +5,7 @@ import { CartContext } from "../context/CartContext";
 import ItemCount from "./ItemCount";
 
 const Item = ({producto}) =>{
+    const {productos,id} = producto;
 
     const {addItem, cart} = useContext(CartContext)
 
@@ -17,12 +18,12 @@ const Item = ({producto}) =>{
 
     return(
         <div id="item">
-            <h4>{producto.nombre}</h4>
-            <img src={producto.imgurl}/>
-            <p>Precio u$d {producto.precio}</p>
-            <p>Stock {producto.stock}</p>
-            <button><Link to={`/item/${producto.id}`} >Mas Detalles</Link></button>
-            <ItemCount stock ={producto.stock}  onAdd ={onAdd}/>
+            <h4>{productos.nombre}</h4>
+            <img src={productos.imgurl}/>
+            <p>Precio u$d {productos.precio}</p>
+            <p>Stock {productos.stock}</p>
+            <button><Link to={`/item/${productos.id}`} >Mas Detalles</Link></button>
+            <ItemCount stock ={productos.stock}  onAdd ={onAdd}/>
         </div>
     )
 }

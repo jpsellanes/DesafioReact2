@@ -1,6 +1,8 @@
 import React,{useState, useEffect} from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
+import {getDocs, query, collection, where} from "firebase/firestore"
+
 
 
 import picP1 from "../assets/items/product1.png"
@@ -10,8 +12,11 @@ import picP4 from "../assets/items/AM5718-HIREL.png"
 import picP5 from "../assets/items/TMP461-SP.png"
 import picP6 from "../assets/items/SMJ320C6701.png"
 import picP7 from "../assets/items/TLV1704.png"
+import { dbFirebase } from "../firebaseConfig";
 
 
+
+/*
 export let productosIniciales = [
     {
         id:1,
@@ -80,7 +85,8 @@ export let productosIniciales = [
         detail: "2.2-V to 36-V, radiation hardened microPower quad comparator in space enhanced plastic",
         features: "Available in Military (-55°C to 125°C) Temperature Range"
     },
-]
+]*/
+
 
 
 const onAdd = () =>{
@@ -97,29 +103,20 @@ const ItemListContainer = (props) =>{
     
 
     useEffect(()=>{
-        const PromesaTest = new Promise((res,rej) =>{
-            setTimeout(() =>{
-                res(productosIniciales);
-            }, 2000)
-        })
-        console.log(categoria)
-        PromesaTest
-            .then((res)=>{
-                if(categoria != undefined){
-                    const productoFiltrado = productosIniciales.filter(productos => productos.categoria === categoria)
-                    setProductos(productoFiltrado);
-                } else {
-                    setProductos(productosIniciales);
-                }
-            })
-            .catch((rej)=>{
-                setError(true);
-            })
-            .finally(()=>{
-                setLoading(false)
-            })
+
+        if(categoria){
+            const q = query(collection(dbFirebase,"productos"),where("categoria","==",categoria))
+            getDocs(q)
+            .then((resp)=> setProductos(resp.docs.map(p=>({productos:p.data(),id: p.id}))))
+            .catch((err)=> console.log(err))
+        } else {
+            getDocs(collection(dbFirebase,"productos"))
+            .then((resp)=>setProductos(resp.docs.map(p=>({productos:p.data(),id:p.id}))))
+            .catch((err)=> console.log(err))
+        }
     },[categoria])
 
+    console.log(productos)
 
     return(
         <div id="ItemListConteiner">

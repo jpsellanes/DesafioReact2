@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
 import {toast} from "react-toastify"
 import "./itemDetailContainer.css"
-import {productosIniciales} from "./ItemListContainer"
-
+import { dbFirebase } from "../firebaseConfig";
+import {getDocs, query, collection, where, getDoc,doc} from "firebase/firestore"
 
 
 
@@ -17,39 +17,24 @@ const ItemDetailContainer = ()=>{
     const [producto, setProducto] = useState({});
 
     useEffect(()=>{
-        setLoading(true);
-        const promesaTest = new Promise((res, rej)=>{
-            setTimeout(()=>{
-                res(productosIniciales);
-            }, 2000)
-        })
+        /*const q = query(collection(dbFirebase, "productos"),where("id","==",id))
+        getDocs(q)
+        .then((resp)=> setProducto(resp.docs.map(p=>({producto:p.data()}))))
+        .catch((err)=>console.log(err))*/
+        const docRef = doc(dbFirebase, "productos", id);
+            getDoc(docRef)
+            .then((res)=> setProducto(res.data()))
 
-        promesaTest
-            .then((res)=>{
-                var producto = productosIniciales.find(producto => {
-                    return producto.id == id;
-                })
-                setProducto(producto)
-            })
-            .catch((rej)=>{
-                toast.error("Problema al cargar producto");
-                setError(true);
-            })
-            .finally(()=>{
-                setLoading(true)
-            })
-    },[])
+    },[id])
 
     return(
         <div id="itemDetailContainer">
-            <ItemDetail producto ={producto}/>
+            <ItemDetail  producto ={producto}/>
         </div>
     )
 }
 
 export default ItemDetailContainer
-
-
 
 
 /*
