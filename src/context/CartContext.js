@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
-
+import {toast} from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
 
 export const CartContext = createContext([]) //Se crea el elemento de context
 const {Provider} = CartContext;
@@ -13,20 +14,20 @@ export const CartContextProvider = ({children}) => {
         console.log("CartProduct",cartProduct)
         let cartAux = []
         if(isInCart(product)){
-            console.log("Esta en el CARRITO")
-            cartProduct = cart.find(item => item.product === product)
+            toast.error("Esta en el CARRITO")
+            cartProduct = cart.find(item => item.product.id === product.id)
             cartProduct.count = cartProduct.count + count
             cartAux =[...cart]
         } else{
             cartAux = [cartProduct, ...cart]
-            console.log("No Esta en el Carrito")
+            toast.info("New Product Added")
         }
         setCart(cartAux)
     }
 
     const removeItem =(product)=>{
         if(isInCart(product)){
-            console.log("Esta en el carrito")
+            toast.info("Item Removed")
             const cartAux = cart.filter(item => item.product !== product)
             setCart(cartAux)
         }
@@ -34,12 +35,12 @@ export const CartContextProvider = ({children}) => {
 
     const clear=()=>{
         setCart([])
-        console.log("Carrilo Eliminado")
+        toast.info("Carrilo Eliminado")
         console.log(cart)
     }
 
     const isInCart =(product)=>{
-        return cart && cart.some(item => item.product === product)
+        return cart && cart.some(item => item.product.id === product.id)
     }
 
     const cartTotal =(cart)=>{
@@ -47,7 +48,6 @@ export const CartContextProvider = ({children}) => {
         for(let item in cart){
             cartTotalCount = cartTotalCount + cart[item]["product"]["precio"]*cart[item]["count"];
         } 
-        console.log(cartTotalCount)
         return cartTotalCount
     }
 
@@ -56,7 +56,6 @@ export const CartContextProvider = ({children}) => {
         for(let item in cart){
             cartTotalUnitCount = cartTotalUnitCount + cart[item]["count"];
         } 
-        console.log(cartTotalUnitCount)
         return cartTotalUnitCount
     }
 
@@ -66,5 +65,5 @@ export const CartContextProvider = ({children}) => {
             {children}
         </CartContext.Provider>
     )
-} //Se crea el elemento provider, es el que pasa todos los valores del contexto
+} 
 

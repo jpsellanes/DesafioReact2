@@ -3,16 +3,18 @@ import "./item.css"
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import ItemCount from "./ItemCount";
+import {toast} from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Item = ({producto}) =>{
-    const {productos,id} = producto;
-
+    const {productos, id} = producto;
     const {addItem, cart} = useContext(CartContext)
 
     const onAdd =(count)=>{
         if(count != undefined){
-            addItem(producto, count)
-            console.log("CART=",cart)
+            addItem(productos, count)
+            toast.info("Product Added!");
         }
     }
 

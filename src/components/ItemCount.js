@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import "./itemCount.css"
+import {toast} from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
 
 function ItemCount(props){
 
@@ -9,14 +11,14 @@ function ItemCount(props){
         if(count < props.stock){
             setCount(count + 1)
         } else {
-            console.log("Not Enough Stock!")
+            toast.error("Not Enough Stock!")
         }
     }
     const remove = ()=>{
         if(count > 0){
             setCount(count - 1)
         } else {
-            console.log("Error!")
+            toast.error("Error!")
         }
     }
 

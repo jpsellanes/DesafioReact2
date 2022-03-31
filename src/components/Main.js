@@ -1,15 +1,7 @@
-import React, {useState, useEffect} from "react";
-import ToggleContador from "./toggleCount"
-
-
-const Main = (props) =>{
+const Main = () =>{
 
     return(
         <main>
-            <div>
-                <h2>Main Main Main</h2>
-            </div>
-            <ToggleContador/>
         </main>
     );
 }

@@ -3,6 +3,9 @@ import "./itemDetail.css"
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
+import {toast} from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const ItemDetail =({producto})=>{
 
@@ -13,7 +16,7 @@ const ItemDetail =({producto})=>{
         if(count != undefined){
             setContador(false);
             addItem(producto, count)
-            console.log("CART=",cart)
+            toast.info("Product Added!");
         }
     }
 

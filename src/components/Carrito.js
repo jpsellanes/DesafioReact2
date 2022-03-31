@@ -1,4 +1,3 @@
-import { Button } from "bootstrap";
 import React,{useContext} from "react";
 import { CartContext } from "../context/CartContext";
 
@@ -14,6 +13,7 @@ const Carrito = ()=>{
             {cart.map(item=>(
                 <div key={item.product.id}>
                     <div>
+                        <p>{item.product.nombre}</p>
                         <img src={item.product.imgurl} />
                         <p>Product ID={item.product.id}</p>
                         <p>Precio U$D {item.product.precio}</p>
