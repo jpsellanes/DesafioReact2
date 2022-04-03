@@ -1,0 +1,17 @@
+.carrito{
+    display: flex;
+    flex-direction: row;
+    padding: 1%;
+    margin: 2%;
+}
+
+.carritoComponent{
+    margin: 2%;
+}
+
+
+.carritoProducto{
+    background-color: rgb(227, 227, 231);
+    padding: 2%;
+    margin: 2%;
+}
