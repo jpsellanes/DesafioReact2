@@ -3,7 +3,8 @@ import "./item.css"
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import ItemCount from "./ItemCount";
-import {toast} from "react-toastify"
+import {toast} from "react-toastify";
+import {Button} from "@mui/material";
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -22,9 +23,9 @@ const Item = ({producto}) =>{
         <div id="item">
             <h4>{productos.nombre}</h4>
             <img src={productos.imgurl}/>
-            <p>Precio u$d {productos.precio}</p>
+            <p>Price u$d {productos.precio}</p>
             <p>Stock {productos.stock}</p>
-            <button><Link to={`/item/${productos.id}`} >Mas Detalles</Link></button>
+            <Button style ={{backgroundColor: "White"}} variant="contained"><Link to={`/item/${productos.id}`} >More Details</Link></Button>
             <ItemCount stock ={productos.stock}  onAdd ={onAdd}/>
         </div>
     )

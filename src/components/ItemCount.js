@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import "./itemCount.css"
 import {toast} from "react-toastify"
+import {Button, ButtonGroup} from "@mui/material"
 import 'react-toastify/dist/ReactToastify.css';
 
 function ItemCount(props){
@@ -28,16 +29,18 @@ function ItemCount(props){
 
     return(
         <div className="itemCounter">
-            <p>Add the desired amount of items</p>
-            <button onClick={add}>
-                Add
-            </button>
-            <button onClick={remove}>
-                Remove
-            </button>
-            <button onClick={addToCart} disabled={count === 0}>
-                Add To Chart
-            </button>
+            <p className="itemCounterP">Add the desired amount of items</p>
+            <ButtonGroup style ={{backgroundColor: "white"}} size="small" variant="outlined">
+                <Button onClick={add} style ={{color:"Black",fontWeight:"bolder"}}>
+                    Add
+                </Button>
+                <Button onClick={remove} style ={{color:"Black",fontWeight:"bolder"}}>
+                    Remove
+                </Button>
+                <Button onClick={addToCart} disabled={count === 0} style ={{color:"Black",fontWeight:"bolder"}}>
+                    Add To Chart
+                </Button>
+            </ButtonGroup>
             <h4>Total Units  {count} </h4>
         </div>
     );

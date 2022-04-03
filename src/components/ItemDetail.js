@@ -32,7 +32,7 @@ const ItemDetail =({producto})=>{
             <p>Stock {producto.stock}</p>
             <p>{producto.detail}</p>
             <p>{producto.features}</p>
-            { contador ? <ItemCount stock ={producto.stock} onAdd ={onAdd}/> : <Link to="/carrito"><button>Finalizar</button></Link> }
+            { contador ? <ItemCount stock ={producto.stock} onAdd ={onAdd}/> : <Link to="/carrito"><button>Go To Cart</button></Link> }
         </div>
     )
 }

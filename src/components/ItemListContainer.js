@@ -39,8 +39,8 @@ const ItemListContainer = () =>{
 
     return(
         <div id="ItemListConteiner">
-            <h2>Item List</h2>
-            <p>{loading ? "Cargando, espere": "Productos:"}</p>
+            <h2>Cutting-Edge Aerospace Semiconductors</h2>
+            <p>{loading ? "Loading, Please Wait": "Current Offer:"}</p>
             <ItemList productos ={productos}/>
         </div>
     )

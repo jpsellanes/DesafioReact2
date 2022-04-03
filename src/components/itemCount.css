@@ -2,5 +2,10 @@
     color: black;
 }
 
+.itemCounterP{
+    font-weight: bold;
+}
 
-
+Button{
+    font-weight: bolder;
+}
