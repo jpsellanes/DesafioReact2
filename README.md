@@ -1,4 +1,4 @@
-# Reactjs Project
+# ReactJS Project
 
 ## Descripcion del Proyecto 
 
@@ -12,6 +12,13 @@ Este es el proyecto final del curso de ReactJS de CoderHouse. Este proyecto es u
 - react-router-dom (6.2.2+)
 - react-toastify (8.2.0+)
 - validator (13.7.0+)
+
+## Instalacion
+
+1. Clonar El repo desde el terminal de Git Bash
+    ```
+    gh repo clone [https://github.com/jpsellanes/DesafioReact2.git](https://github.com/jpsellanes/DesafioReact2.git)
+    ```
 
 ### `npm test`
 
