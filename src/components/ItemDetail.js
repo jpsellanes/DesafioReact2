@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const ItemDetail =({producto})=>{
 
     const[contador, setContador] = useState(true);
-    const {addItem, cart} = useContext(CartContext)
+    const {addItem} = useContext(CartContext)
 
     const onAdd =(count)=>{
         if(count != undefined){
