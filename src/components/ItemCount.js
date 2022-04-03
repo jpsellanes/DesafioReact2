@@ -38,7 +38,7 @@ function ItemCount(props){
                     Remove
                 </Button>
                 <Button onClick={addToCart} disabled={count === 0} style ={{color:"Black",fontWeight:"bolder"}}>
-                    Add To Chart
+                    Add To Cart
                 </Button>
             </ButtonGroup>
             <h4>Total Units  {count} </h4>

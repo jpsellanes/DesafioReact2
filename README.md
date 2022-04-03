@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/40129c5e-7b83-4705-b2eb-6fe54725c722/deploy-status)](https://app.netlify.com/sites/regal-pithivier-9c6ccc/deploys)
+
 # ReactJS Project
 
 ## Descripcion del Proyecto 
@@ -15,15 +17,28 @@ Este es el proyecto final del curso de ReactJS de CoderHouse. Este proyecto es u
 
 ## Instalacion
 
-1. Clonar El repo desde el terminal de Git Bash
-    ```
-    gh repo clone [https://github.com/jpsellanes/DesafioReact2.git](https://github.com/jpsellanes/DesafioReact2.git)
-    ```
+1. Clonar El repo desde el terminal de Git Bash dentro de una carpeta donde se vaya a ejecutar el mismo
+```
+gh repo clone https://github.com/jpsellanes/DesafioReact2.git)
+```
+2. Una vez Clonado el repositorio, ejecutar el terminal en dicha carpeta e installar las dependencias necesarias con
+```
+npm install "NombreDeDependenciaNecesaria"
+```
+3. Ejecutar el repositorio con el siguiente comando en el terminal (en la carpeta donde se ha instalado todo lo anterior)
+```
+npm start
+```
 
-### `npm test`
+## Como usar:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+La pagina es un e-commerce de semiconductores de alta performance con certificacion Espacial.
+Es posible navegar por la home donde estaran todos los productos listados, o sino filtrar segun las categorias que se
+encuentran en la navbar. Hay dos opciones para elegir productos, desde el listado o abriendo el detalle del producto. Es posible revisar el carrito una vez agregado un producto clickeando el icono de carrito en el navbar
+
+1. Sumar los productos deseados desde el listado, o abrir el detalle y agregarlos uno a uno.
+2. Para finalizar la compra, completar el formulario y confirmar la compra.
+
 
 ### `npm run build`
 
@@ -35,17 +50,5 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
