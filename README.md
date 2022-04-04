@@ -39,17 +39,17 @@ encuentran en la navbar. Hay dos opciones para elegir productos, desde el listad
 1. Sumar los productos deseados desde el listado, o abrir el detalle y agregarlos uno a uno.
 2. Para finalizar la compra, completar el formulario y confirmar la compra.
 
+### Demo de la pagina
+Se puede visualizar el uso de la pagina en el siguiente GIF
+
 ![](gifExplicacion.gif)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Netlify Deployment
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Es posible ver una version live de la pagina en el siguiente link. Esta fue hecha con Netlify
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[Link al Deployment Live en Netlify](https://regal-pithivier-9c6ccc.netlify.app/) 
 
 
 
