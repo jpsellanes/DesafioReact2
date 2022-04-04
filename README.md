@@ -19,7 +19,7 @@ Este es el proyecto final del curso de ReactJS de CoderHouse. Este proyecto es u
 
 1. Clonar El repo desde el terminal de Git Bash dentro de una carpeta donde se vaya a ejecutar el mismo
 ```
-gh repo clone https://github.com/jpsellanes/DesafioReact2.git)
+gh repo clone https://github.com/jpsellanes/DesafioReact2.git
 ```
 2. Una vez Clonado el repositorio, ejecutar el terminal en dicha carpeta e installar las dependencias necesarias con
 ```
@@ -39,6 +39,7 @@ encuentran en la navbar. Hay dos opciones para elegir productos, desde el listad
 1. Sumar los productos deseados desde el listado, o abrir el detalle y agregarlos uno a uno.
 2. Para finalizar la compra, completar el formulario y confirmar la compra.
 
+![Alt text](gifExplicacion.gif) / ![](gifExplicacion.gif)
 
 ### `npm run build`
 
