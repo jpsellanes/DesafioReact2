@@ -39,7 +39,7 @@ encuentran en la navbar. Hay dos opciones para elegir productos, desde el listad
 1. Sumar los productos deseados desde el listado, o abrir el detalle y agregarlos uno a uno.
 2. Para finalizar la compra, completar el formulario y confirmar la compra.
 
-![Alt text](gifExplicacion.gif) / ![](gifExplicacion.gif)
+![](gifExplicacion.gif)
 
 ### `npm run build`
 
